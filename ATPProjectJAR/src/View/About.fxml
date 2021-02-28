@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<DialogPane maxHeight="300.0" maxWidth="580.0" minHeight="300.0" minWidth="580.0" prefHeight="300.0" prefWidth="580.0" stylesheets="@AboutStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+    <header>
+        <Label alignment="TOP_CENTER" text="About Us">
+            <font>
+                <Font name="Berlin Sans FB Demi Bold" size="55.0" />
+            </font>
+        </Label>
+    </header>
+    <content>
+    </content>
+    <content>
+        <HBox alignment="CENTER" prefHeight="240.0" prefWidth="580.0" spacing="50.0">
+            <children>
+                <TextFlow prefHeight="213.0" prefWidth="463.0">
+                    <children>
+                        <Label prefHeight="213.0" prefWidth="422.0" text="a little backgorund about the programmers: Adir Marom &amp; Ben Rozilio.&#10;&#10;second year ,Software and Information Systems Engineering.&#10;&#10;created a little maseterpieace for your enjoyment inspired by Game Of Thrones series.&#10;&#10;algorithms for Generate and Solution: BFS ,DFS and fest FIrst Search.&#10;&#10;Enjoy ." wrapText="true">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                            </font>
+                       </Label>
+                    </children>
+                </TextFlow>
+            <VBox prefHeight="400.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="adir" />
+                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="ben" />
+               </children>
+            </VBox>
+            </children>
+        </HBox>
+    </content>
+</DialogPane>

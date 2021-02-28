@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="292.0" prefWidth="300.0" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HelpControll">
+   <children>
+      <Pane prefHeight="646.0" prefWidth="611.0" styleClass="help" />
+   </children>
+</AnchorPane>

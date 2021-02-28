@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import View.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="myBord" onKeyPressed="#KeyPressed" prefHeight="582.0" prefWidth="766.0" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+   <left>
+      <VBox accessibleRole="TEXT" prefHeight="200.0" prefWidth="270.0" styleClass="Adir" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="444.0" prefWidth="300.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="45.0" />
+                  <Label layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="95.0" styleClass="Label" text="  Row" textFill="WHITE" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtfld_rowsNum" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtfld_columnsNum" layoutX="60.0" layoutY="43.0" GridPane.columnIndex="1" />
+                  <Button fx:id="btn_generateMaze" mnemonicParsing="false" onAction="#generateMaze" prefHeight="25.0" prefWidth="316.0" text="Generate" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <Button fx:id="btn_solveMaze" layoutX="60.0" layoutY="73.0" mnemonicParsing="false" onAction="#generateSolution" prefHeight="25.0" prefWidth="226.0" text="Solution" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                  <Label layoutX="10.0" layoutY="137.0" prefHeight="60.0" prefWidth="201.0" styleClass="Label" text="  Game " textFill="#f5f3f3" GridPane.columnSpan="2" GridPane.rowIndex="5" GridPane.rowSpan="2">
+                     <font>
+                        <Font size="21.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="111.0" styleClass="Label" text=" Column" textFill="WHITE" />
+                  <Label layoutX="10.0" layoutY="160.0" prefHeight="60.0" prefWidth="201.0" styleClass="Label" text="  of" textFill="#fcf7f7" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="220.0" prefHeight="60.0" prefWidth="201.0" styleClass="Label" text="  Maze" textFill="WHITE" GridPane.columnSpan="2" GridPane.rowIndex="8" GridPane.rowSpan="2">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <MenuBar prefHeight="28.0" prefWidth="762.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="true" onAction="#ClearMaze" text="New" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveMaze" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadMaze" text="Load" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem fx:id="btn_properties" mnemonicParsing="false" onAction="#ShowProperties" text="Properties" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+               <items>
+              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#help" text="information" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Exit">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <Pane styleClass="background" BorderPane.alignment="CENTER">
+         <children>
+               <MazeDisplay fx:id="mazeDisplay" height="670.0" imageFileEnd="src/View/resources/Images/end.jpeg"
+                            imageFileNameCharacter="src/View/resources/Images/2.png"
+                            imageFileNameCharacter_1="src/View/resources/Images/1.png"
+                            imageFileNameCharacter_2="src/View/resources/Images/2.png"
+                            imageFileNameCharacter_3="src/View/resources/Images/3.png"
+                            imageFileNameCharacter_4="src/View/resources/Images/4.png"
+                            imageFileNameCharacter_6="src/View/resources/Images/6.png"
+                            imageFileNameCharacter_7="src/View/resources/Images/7.png"
+                            imageFileNameCharacter_8="src/View/resources/Images/8.png"
+                            imageFileNameCharacter_9="src/View/resources/Images/9.png"
+                            imageFileNameWall="src/View/resources/Images/soliders.jpeg"
+                            imageFileSol="src/View/resources/Images/fire.png"
+                            imageFileStart="src/View/resources/Images/start.jpeg"
+                            imageFileTrail="src/View/resources/Images/wall3.jpg" width="620.0">
+               <styleClass>
+                  <String fx:value="root" />
+                  <String fx:value="Label" />
+               </styleClass>
+            </MazeDisplay>
+         </children>
+      </Pane >
+   </center>
+</BorderPane>
